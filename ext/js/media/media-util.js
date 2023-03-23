@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2023  Yomitan Authors
  * Copyright (C) 2020-2022  Yomichan Authors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -107,6 +108,8 @@ class MediaUtil {
      */
     static getFileExtensionFromAudioMediaType(mediaType) {
         switch (mediaType) {
+            case 'audio/aac':
+                return '.aac';
             case 'audio/mpeg':
             case 'audio/mp3':
                 return '.mp3';

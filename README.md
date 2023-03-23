@@ -11,7 +11,7 @@
 
 Yomitan turns your web browser into a tool for building Japanese language literacy by helping you to decipher texts
 which would be otherwise too difficult tackle. This extension is similar to
-[Rikaichamp](https://addons.mozilla.org/en-US/firefox/addon/rikaichamp/) for Firefox and
+[10ten Japanese Reader (formerly Rikaichamp)](https://addons.mozilla.org/en-US/firefox/addon/10ten-ja-reader/) for Firefox and
 [Rikaikun](https://chrome.google.com/webstore/detail/rikaikun/jipdnfibhldikgcjhfnomkfpcebammhp?hl=en) for Chrome, but it
 stands apart in its goal of being an all-encompassing learning tool as opposed to a mere browser-based dictionary.
 
@@ -87,7 +87,7 @@ language is not English, you may consider also importing the English version for
     *   [jmdict\_swedish.zip](https://github.com/themoeway/yomitan/raw/dictionaries/jmdict_swedish.zip)
 *   **[JMnedict](https://www.edrdg.org/enamdict/enamdict_doc.html)** (Japanese names)
     *   [jmnedict.zip](https://github.com/themoeway/yomitan/raw/dictionaries/jmnedict.zip)
-*   **[KireiCake](https://kireicake.com/rikaicakes/)** (Japanese slang)
+*   **KireiCake (upstream project dead)** (Japanese slang)
     *   [kireicake.zip](https://github.com/themoeway/yomitan/raw/dictionaries/kireicake.zip)
 *   **[KANJIDIC](http://nihongo.monash.edu/kanjidic2/index.html)** (Japanese kanji)
     *   [kanjidic\_english.zip](https://github.com/themoeway/yomitan/raw/dictionaries/kanjidic_english.zip)
@@ -101,7 +101,7 @@ language is not English, you may consider also importing the English version for
 
 ## Basic Usage
 
-1.  Click the <img src="ext/images/yomichan-icon.svg" alt="" width="16" height="16"> _Yomitan_ button in the browser bar to open the quick-actions popup.
+1.  Click the <img src="ext/images/yomitan-icon.svg" alt="" width="16" height="16"> _Yomitan_ button in the browser bar to open the quick-actions popup.
 
     <img src="resources/images/browser-action-popup1.png" alt="">
 
@@ -346,4 +346,4 @@ versions packaged.
 *   Handlebars: [homepage](https://handlebarsjs.com/) - [snapshot](https://s3.amazonaws.com/builds.handlebarsjs.com/handlebars.min-v4.7.7.js) - [license](https://github.com/handlebars-lang/handlebars.js/blob/v4.7.7/LICENSE)
 *   JSZip: [homepage](https://stuk.github.io/jszip/) - [snapshot](https://github.com/Stuk/jszip/blob/v3.9.1/dist/jszip.min.js) - [license](https://github.com/Stuk/jszip/blob/v3.9.1/LICENSE.markdown)
 *   WanaKana: [homepage](https://wanakana.com/) - [snapshot](https://unpkg.com/wanakana@4.0.2/umd/wanakana.min.js) - [license](https://github.com/WaniKani/WanaKana/blob/4.0.2/LICENSE)
-*   parse5: [homepage](https://github.com/inikulin/parse5) - [snapshot](https://github.com/inikulin/parse5/tree/v7.1.1/packages/parse5) - [license](https://github.com/inikulin/parse5/blob/v7.1.1/LICENSE) _(Only used in MV3 build)_
+*   parse5: [homepage](https://github.com/inikulin/parse5) - [snapshot](https://github.com/inikulin/parse5/tree/v7.1.2/packages/parse5) - [license](https://github.com/inikulin/parse5/blob/v7.1.2/LICENSE) _(Only used in MV3 build)_
