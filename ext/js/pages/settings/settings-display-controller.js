@@ -26,6 +26,10 @@ class SettingsDisplayController {
     constructor(settingsController, modalController) {
         this._settingsController = settingsController;
         this._modalController = modalController;
+
+        // TODO add to list of globals?
+        this._themeController = new ThemeController(document.documentElement);
+
         this._contentNode = null;
         this._menuContainer = null;
         this._onMoreToggleClickBind = null;
@@ -35,6 +39,14 @@ class SettingsDisplayController {
     prepare() {
         this._contentNode = document.querySelector('.content');
         this._menuContainer = document.querySelector('#popup-menus');
+
+        // TODO do not do this!!! use options!
+        // TODO determine the differences between siteTheme, theme, and outerTheme
+        this._themeController.siteTheme = 'dark';
+        this._themeController.prepare();
+        this._themeController.theme = "dark";
+        this._themeController.outerTheme = "dark";
+        this._themeController.updateTheme();
 
         const onFabButtonClick = this._onFabButtonClick.bind(this);
         for (const fabButton of document.querySelectorAll('.fab-button')) {
@@ -328,4 +340,6 @@ class SettingsDisplayController {
     _isElementVisible(element) {
         return (element.offsetParent !== null);
     }
+
+
 }
