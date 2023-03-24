@@ -64,16 +64,24 @@
     --outline-item-background-color-hover: rgba(13, 13, 13, 0.15);
     --warning-color: #96751c;
     --warning-color-light: #edc75e;
+    --warning-text-color: var(--warning-color);
     --dim-background-color: rgba(0, 0, 0, 0.5);
     --content-dimmer-color: rgba(0, 0, 0, 0.1);
     --advanced-color: #6640be;
     --advanced-color-lighter: hsl(258, 50%, 75%);
-    --advanced-color-transparent25: rgba(102, 64, 190, 0.5);
+    --advanced-color-setting-marker: var(--advanced-color-lighter);
+    --advanced-color-transparent25: rgba(102, 64, 190, 0.5); /* --advanced-color half opacity */
 
     --modal-padding-horizontal: 1em;
     --modal-padding-vertical: 0.625em;
     --modal-padding-vertical-half: calc(var(--modal-padding-vertical) * 0.5);
     --modal-button-spacing: 0.625em;
+
+    /* Scrollbars, TODO copied/pasted from display.css */
+    --scrollbar-thumb-color: #c1c1c1;
+    --scrollbar-track-color: #f1f1f1;
+    --scrollbar-inverse-thumb-color: #444444;
+    --scrollbar-inverse-track-color: #2f2f2f;
 }
 :root:not([data-loaded=true]) {
     --animation-duration: 0s;
@@ -81,6 +89,20 @@
 :root[data-theme=dark] {
     --separator-color1: #333333;
     --separator-color2: #222222;
+
+    /* Scrollbars, TODO copied/pasted from display.css */
+    --scrollbar-thumb-color: #444444;
+    --scrollbar-track-color: #2f2f2f;
+    --scrollbar-inverse-thumb-color: #c1c1c1;
+    --scrollbar-inverse-track-color: #f1f1f1;
+
+    /* TODO how on earth did he choose these colors??? */
+    --advanced-color: #a78edf;
+    --advanced-color-lighter: #6640be;
+    --advanced-color-setting-marker: #4c3a75;
+    --advanced-color-transparent25: rgba(167, 142, 223, 0.5);
+
+    --warning-text-color: var(--warning-color-light);
 }
 
 
@@ -150,7 +172,7 @@ pre {
 
 /* Text styles */
 .warning-text {
-    color: var(--warning-color);
+    color: var(--warning-text-color);
 }
 
 
@@ -686,7 +708,7 @@ select.short-height {
 .settings-group.advanced-only>.settings-item::after,
 .settings-item.advanced-only::after {
     content: '';
-    background-color: var(--advanced-color-lighter);
+    background-color: var(--advanced-color-setting-marker);
     position: absolute;
     right: 0;
     top: 0;
@@ -2460,3 +2482,57 @@ input[type=number].dictionary-priority {
         box-shadow: var(--shadow-right);
     }
 }
+
+
+
+/* Scrollbars, TODO copied/pasted from display.css */
+:root:not([data-theme=light]) .scrollbar {
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
+:root:not([data-theme=light]) .scrollbar::-webkit-scrollbar {
+    width: auto;
+}
+:root:not([data-theme=light]) .scrollbar::-webkit-scrollbar-button {
+    height: 0;
+}
+:root:not([data-theme=light]) .scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+}
+:root:not([data-theme=light]) .scrollbar::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-thumb-color);
+}
+:root:not([data-theme=light]) .scrollbar::-webkit-scrollbar-track-piece {
+    background-color: var(--scrollbar-track-color);
+}
+:root:not([data-theme=light]) .scrollbar::-webkit-scrollbar-corner {
+    background-color: var(--scrollbar-track-color);
+}
+:root .scrollbar-inverse {
+    scrollbar-color: var(--scrollbar-inverse-humb-color) var(--scrollbar-inverse-track-color);
+}
+:root .scrollbar-inverse::-webkit-scrollbar {
+    width: auto;
+}
+:root .scrollbar-inverse::-webkit-scrollbar-button {
+    height: 0;
+}
+:root .scrollbar-inverse::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-inverse-thumb-color);
+}
+:root .scrollbar-inverse::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-inverse-thumb-color);
+}
+:root .scrollbar-inverse::-webkit-scrollbar-track-piece {
+    background-color: var(--scrollbar-inverse-track-color);
+}
+:root .scrollbar-inverse::-webkit-scrollbar-corner {
+    background-color: var(--scrollbar-inverse-track-color);
+}
+.scrollbar-spacer {
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    visibility: hidden;
+    flex: 0 1 auto;
+}
+
