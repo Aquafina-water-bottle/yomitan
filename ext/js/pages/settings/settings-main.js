@@ -146,6 +146,12 @@ async function setupGenericSettingsController(genericSettingController) {
         const extensionKeyboardShortcutController = new ExtensionKeyboardShortcutController(settingsController);
         extensionKeyboardShortcutController.prepare();
 
+        const themeController = new ThemeController(document.documentElement);
+        themeController.prepare();
+
+        const pageThemeController = new PageThemeController(settingsController, themeController);
+        pageThemeController.prepare();
+
         const popupWindowController = new PopupWindowController();
         popupWindowController.prepare();
 

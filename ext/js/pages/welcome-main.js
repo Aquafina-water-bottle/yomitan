@@ -74,6 +74,12 @@ async function setupGenericSettingsController(genericSettingController) {
         const genericSettingController = new GenericSettingController(settingsController);
         preparePromises.push(setupGenericSettingsController(genericSettingController));
 
+        const themeController = new ThemeController(document.documentElement);
+        themeController.prepare();
+
+        const pageThemeController = new PageThemeController(settingsController, themeController);
+        pageThemeController.prepare();
+
         const simpleScanningInputController = new ScanInputsSimpleController(settingsController);
         simpleScanningInputController.prepare();
 
