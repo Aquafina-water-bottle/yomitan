@@ -23,9 +23,10 @@
  */
 
 class SettingsDisplayController {
-    constructor(settingsController, modalController) {
+    constructor(settingsController, modalController, themeController) {
         this._settingsController = settingsController;
         this._modalController = modalController;
+        this._themeController = themeController;
 
         // TODO add to list of globals?
         // TODO what about constructor???
@@ -40,14 +41,6 @@ class SettingsDisplayController {
     prepare() {
         this._contentNode = document.querySelector('.content');
         this._menuContainer = document.querySelector('#popup-menus');
-
-        // TODO do not do this!!! use options!
-        // TODO determine the differences between siteTheme, theme, and outerTheme
-        //this._themeController.siteTheme = 'dark';
-        //this._themeController.prepare();
-        //this._themeController.theme = "dark";
-        //this._themeController.outerTheme = "dark";
-        //this._themeController.updateTheme();
 
         const onFabButtonClick = this._onFabButtonClick.bind(this);
         for (const fabButton of document.querySelectorAll('.fab-button')) {
@@ -71,6 +64,11 @@ class SettingsDisplayController {
 
         for (const node of document.querySelectorAll('.defer-load-iframe')) {
             this._setupDeferLoadIframe(node);
+        }
+
+        const onThemeSettingChanged = this._onThemeSettingChanged.bind(this);
+        for (const node of document.querySelectorAll('[data-setting="general.popupTheme"]')) {
+            node.addEventListener('settingChanged', onThemeSettingChanged);
         }
 
         this._onMoreToggleClickBind = this._onMoreToggleClick.bind(this);
@@ -233,6 +231,11 @@ class SettingsDisplayController {
                 this._indentInput(e, node, args);
                 break;
         }
+    }
+
+    _onThemeSettingChanged({detail: {value}}) {
+      this._themeController.theme = value;
+      this._themeController.updateTheme();
     }
 
     _updateScrollTarget() {

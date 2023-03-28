@@ -168,7 +168,7 @@ async function setupGenericSettingsController(genericSettingController) {
 
         document.documentElement.dataset.loaded = 'true';
 
-        const settingsDisplayController = new SettingsDisplayController(settingsController, modalController);
+        const settingsDisplayController = new SettingsDisplayController(settingsController, modalController, themeController);
         settingsDisplayController.prepare();
     } catch (e) {
         log.error(e);
