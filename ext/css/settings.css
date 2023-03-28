@@ -103,7 +103,19 @@
     --advanced-color-transparent25: rgba(167, 142, 223, 0.5);
 
     --warning-text-color: var(--warning-color-light);
+
 }
+
+/* TODO better way of doing this?????? */
+/* SEE data-icon:
+ * .icon[data-icon=book] {
+ *     --icon-image: url(/images/book.svg);
+ * }
+ */
+:root[data-theme=dark] .inline-icon-ccc {
+    filter: brightness(450%);
+}
+
 
 
 @media (max-width: 700px) {
@@ -2482,57 +2494,3 @@ input[type=number].dictionary-priority {
         box-shadow: var(--shadow-right);
     }
 }
-
-
-
-/* Scrollbars, TODO copied/pasted from display.css */
-:root:not([data-theme=light]) .scrollbar {
-    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
-}
-:root:not([data-theme=light]) .scrollbar::-webkit-scrollbar {
-    width: auto;
-}
-:root:not([data-theme=light]) .scrollbar::-webkit-scrollbar-button {
-    height: 0;
-}
-:root:not([data-theme=light]) .scrollbar::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb-color);
-}
-:root:not([data-theme=light]) .scrollbar::-webkit-scrollbar-track {
-    background-color: var(--scrollbar-thumb-color);
-}
-:root:not([data-theme=light]) .scrollbar::-webkit-scrollbar-track-piece {
-    background-color: var(--scrollbar-track-color);
-}
-:root:not([data-theme=light]) .scrollbar::-webkit-scrollbar-corner {
-    background-color: var(--scrollbar-track-color);
-}
-:root .scrollbar-inverse {
-    scrollbar-color: var(--scrollbar-inverse-humb-color) var(--scrollbar-inverse-track-color);
-}
-:root .scrollbar-inverse::-webkit-scrollbar {
-    width: auto;
-}
-:root .scrollbar-inverse::-webkit-scrollbar-button {
-    height: 0;
-}
-:root .scrollbar-inverse::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-inverse-thumb-color);
-}
-:root .scrollbar-inverse::-webkit-scrollbar-track {
-    background-color: var(--scrollbar-inverse-thumb-color);
-}
-:root .scrollbar-inverse::-webkit-scrollbar-track-piece {
-    background-color: var(--scrollbar-inverse-track-color);
-}
-:root .scrollbar-inverse::-webkit-scrollbar-corner {
-    background-color: var(--scrollbar-inverse-track-color);
-}
-.scrollbar-spacer {
-    display: inline-block;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    visibility: hidden;
-    flex: 0 1 auto;
-}
-
